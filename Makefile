@@ -12,7 +12,7 @@ TARGET = hello
  
 $(TARGET).so: $(TARGET).o
 #	g++ -shared $(TARGET).o -L$(BOOST_LIB) -lboost_python-$(PYTHON_VERSION) -L$(PYTHON_LIB) -lpython3.6m -o $(TARGET).so 
-	g++ -shared $(TARGET).o -L$(BOOST_LIB) -L$(BOOST_LIB2) -lboost_python3 -L$(PYTHON_LIB) -lpython3.6 -o $(TARGET).so
+	g++ -g -shared $(TARGET).o -L$(BOOST_LIB) -L$(BOOST_LIB2) -lboost_python3 -L$(PYTHON_LIB) -lpython3.6 -o $(TARGET).so
 
 $(TARGET).o: $(TARGET).cpp
-	g++ -I$(PYTHON_INCLUDE) -I$(BOOST_INC) -fPIC -c $(TARGET).cpp
+	g++ -g -I$(PYTHON_INCLUDE) -I$(BOOST_INC) -fPIC -c $(TARGET).cpp

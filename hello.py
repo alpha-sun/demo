@@ -1,10 +1,9 @@
 import hello
-import ptvsd
 
-#     
+print(hello.greetGood())
 
-ptvsd.enable_attach("secret", address = ('127.0.0.1', 3000))
-
-ptvsd.wait_for_attach()
-
-print(hello.greet())
+try:
+    print(hello.greetGood())
+    print(hello.greetBad())
+except:
+    print("Caught an error and moving along...")
